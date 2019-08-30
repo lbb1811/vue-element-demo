@@ -13,6 +13,12 @@ import './icons'
 import './permission'
 import './utils/error-log'
 
+/** Mockjs */
+import { mockXHR } from '../mock'
+if (process.env.NODE_ENV === 'production') {
+  mockXHR()
+}
+
 // filters
 
 Vue.use(ElementUI, {

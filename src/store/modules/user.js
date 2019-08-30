@@ -82,6 +82,14 @@ const actions = {
       })
     })
   },
+  resetToken ({ commit }) {
+    return new Promise(resolve => {
+      commit('SET_TOKEN', '')
+      commit('SET_ROLES', [])
+      removeToken()
+      resolve()
+    })
+  },
   // dynamically modify permissions
   changeRoles ({ commit, dispatch }, role) {
     return new Promise(async (resolve, reject) => {
