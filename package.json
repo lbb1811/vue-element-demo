@@ -31,5 +31,13 @@
     "mockjs": "^1.0.1-beta3",
     "svg-sprite-loader": "^4.1.6",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "engines": {
+    "node": ">=8.9",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
