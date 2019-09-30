@@ -156,3 +156,18 @@ export default {
   }
 }
 </script>
+
+<style>
+.theme-message,
+.theme-picker-dropdown {
+  z-index: 9999 !important;
+}
+.theme-picker .el-color-picker__trigger {
+  height: 26px !important;
+  width: 26px !important;
+  padding: 2px;
+}
+.theme-picker-dropdown .el-color-dropdown__link-btn {
+  display: none;
+}
+</style>
