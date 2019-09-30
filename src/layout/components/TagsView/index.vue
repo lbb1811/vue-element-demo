@@ -1,8 +1,9 @@
 <template>
   <div id="tags-view-container" class="tags-view-container">
     <scroll-pane ref="scrollPane" class="tags-view-wrapper">
-      <router-link v-for="tag in visitedViews" :key="tag.path" tag="span"
+      <router-link ref="tag" v-for="tag in visitedViews" :key="tag.path" tag="span"
         :class="isActive(tag)?'active':''" class="tags-view-item"
+        :to="{ path:tag.path, query:tag.query, fullPath:tag.fullPath }"
         @click.middle.native="closeSelectedTag(tag)"
         @contextmenu.prevent.native="openMenu(tag,$event)"
       >
@@ -36,7 +37,7 @@ export default {
   },
   computed: {
     visitedViews () {
-      return this.$sotre.state.tagsView.visitedViews
+      return this.$store.state.tagsView.visitedViews
     },
     routes () {
       return this.$store.state.permission.routes
@@ -47,9 +48,10 @@ export default {
     this.addTags()
   },
   methods: {
-    isAcitve (route) {
+    isActive (route) {
       return route.path === this.$route.path
     },
+    // 格式化路由 展示菜单
     filterAffixTags (routes, basePath = '/') {
       let tags = []
       routes.forEach(route => {
@@ -80,6 +82,7 @@ export default {
         }
       }
     },
+    // 当前页加入到 tagsView中
     addTags () {
       const { name } = this.$route
       if (name) {
