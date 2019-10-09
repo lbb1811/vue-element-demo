@@ -44,8 +44,10 @@ export default {
       }
     }
   },
-  handleClickOutside () {
-    this.$store.dispatch('app/closeSidebar', { withoutAnimation: false })
+  methods: {
+    handleClickOutside () {
+      this.$store.dispatch('app/closeSidebar', { withoutAnimation: false })
+    }
   }
 }
 </script>
