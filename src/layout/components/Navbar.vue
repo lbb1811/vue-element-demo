@@ -115,7 +115,7 @@ export default {
       height: 100%;
       font-size: 18px;
       color: #5a5e66;
-      vertical-align: text-bottom;
+      vertical-align: top;
 
       &.hover-effect {
         cursor: pointer;
