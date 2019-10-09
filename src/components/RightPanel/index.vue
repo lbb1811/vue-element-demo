@@ -92,7 +92,8 @@ export default {
 
 .rightPanel {
   width: 100%;
-  min-width: 100vh;
+  max-width: 260px;
+  height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
@@ -119,7 +120,7 @@ export default {
 }
 
 .handle-button {
-  width: 4px;
+  width: 48px;
   height: 48px;
   position: absolute;
   left: -48px;
