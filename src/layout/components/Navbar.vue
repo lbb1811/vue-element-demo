@@ -49,7 +49,7 @@ import Hamburger from '@/components/Hamburger'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
 import SizeSelect from '@/components/SizeSelect'
-import Search from '@/components/Search'
+import Search from '@/components/HeaderSearch'
 
 export default {
   components: {
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     toggleSideBar () {
-      this.$store.dispatch('app/toggleSideBar')
+      this.$store.dispatch('app/toggleSidebar')
     },
     async logout () {
       await this.$store.dispatch('user/logout')
