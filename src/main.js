@@ -16,13 +16,18 @@ import './icons'
 import './permission'
 import './utils/error-log'
 
+import * as filters from './filters' // global filters
+
 /** Mockjs */
 import { mockXHR } from '../mock'
 if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
 
-// filters
+// register global utility filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.use(ElementUI, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
