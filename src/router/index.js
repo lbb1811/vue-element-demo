@@ -91,7 +91,43 @@ export const constantRoutes = [
   }
 ]
 // 需动态加载的路由
-export const asyncRoutes = []
+/**
+ * asyncRoutes
+ * the routes that need to dynamically loaded based on user roles
+ */
+export const asyncRoutes = [
+  {
+    path: '/permission',
+    component: Layout,
+    redirect: '/permission/page',
+    alwaysShow: true, // will always show the root menu
+    name: 'Permission',
+    // you can set roles in root nav
+    meta: { title: 'Permission', icon: 'lock', roles: ['admin', 'editor'] },
+    children: [
+      {
+        path: 'page',
+        component: () => import('@/views/permission/page'),
+        name: 'PagePermission',
+        // or you can only set roles in sub nav
+        meta: { title: 'Page Permission', roles: ['admin'] }
+      },
+      {
+        path: 'directive',
+        component: () => import('@/views/permission/directive'),
+        name: 'DirectivePermission',
+        // if you do not set roles. means: this page does not require permission
+        meta: { title: 'Directive Permission' }
+      },
+      {
+        path: 'role',
+        component: () => import('@/views/permission/role'),
+        name: 'RolePermission',
+        meta: { title: 'Role Permission', roles: ['admin'] }
+      }
+    ]
+  }
+]
 
 /**
  * vue-router路由权限控制 两种方式
