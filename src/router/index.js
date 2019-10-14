@@ -75,8 +75,20 @@ export const constantRoutes = [
         meta: { title: 'Guide', icon: 'guide', noCache: true }
       }
     ]
+  },
+  {
+    path: '/profile',
+    component: Layout,
+    redirect: '/profile/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/profile/index'),
+        name: 'Profile',
+        meta: { title: 'Profile', icon: 'user', noCache: true }
+      }
+    ]
   }
-  // .....
 ]
 // 需动态加载的路由
 export const asyncRoutes = []
