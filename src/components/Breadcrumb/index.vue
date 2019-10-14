@@ -60,7 +60,7 @@ export default {
         this.$router.push(redirect)
         return
       }
-      this.$router.psuh(this.pathCompile(path))
+      this.$router.push(this.pathCompile(path))
     }
   }
 }
