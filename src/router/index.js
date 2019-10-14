@@ -62,6 +62,19 @@ export const constantRoutes = [
         meta: { title: 'Documentation', icon: 'documentation', affix: true }
       }
     ]
+  },
+  {
+    path: '/guide',
+    component: Layout,
+    redirect: '/guid/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/guide/index'),
+        name: 'Guide',
+        meta: { title: 'Guide', icon: 'guide', noCache: true }
+      }
+    ]
   }
   // .....
 ]
