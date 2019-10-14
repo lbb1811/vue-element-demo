@@ -1,5 +1,7 @@
 <template>
   <div class="app-container documentation-container">
+    <p style="margin-left:50px">本项目学习gitHub开源项目 vue-element-admin (https://github.com/PanJiaChen/vue-element-admin/)</p>
+
     <a
       class="document-btn"
       target="_blank"
@@ -8,7 +10,7 @@
     <a
       class="document-btn"
       target="_blank"
-      href="https://github.com/PanJiaChen/vue-element-admin/"
+      href="https://github.com/lbb1811/vue-element-pro/"
     >Github Repository</a>
     <a
       class="document-btn"
