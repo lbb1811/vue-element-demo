@@ -12,7 +12,10 @@
       <template slot="title">
         <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
       </template>
-      <sidebar-item />
+      <!-- 递归组件 侧边栏目录 -->
+      <sidebar-item v-for="child in item.children" :key="child.path" class="nest-menu"
+        :is-nest="true" :item="child" :base-path="resolvePath(child.path)"
+      />
     </el-submenu>
   </div>
 </template>
@@ -66,6 +69,9 @@ export default {
 
       return false
     },
+    /**
+     * 拼接路径，返回完整的路由路径
+     */
     resolvePath (routePath) {
       if (isExternal(routePath)) {
         return routePath
