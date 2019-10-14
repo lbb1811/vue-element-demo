@@ -1,5 +1,5 @@
 <template>
-  <el-color-picker v-model="theme" class="theme-picker" popper-clas="theme-picker-dropdown"
+  <el-color-picker v-model="theme" class="theme-picker" popper-class="theme-picker-dropdown"
     :predefine="['#409EFF', '#1890ff', '#304156','#212121','#11a983', '#13c2c2', '#6959CD', '#f5222d', ]"
   />
 </template>
@@ -160,7 +160,7 @@ export default {
 <style>
 .theme-message,
 .theme-picker-dropdown {
-  z-index: 9999 !important;
+  z-index: 99999 !important;
 }
 .theme-picker .el-color-picker__trigger {
   height: 26px !important;
